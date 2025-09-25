@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import {Toaster} from 'react-hot-toast';
+import {BrowserRouter as Router,Routes} from "react-router-dom";
+import './App.css'; // Assuming you have some global styles
+import UserRoutes from "./components/routes/UserRoutes";
+import AdminRoutes from './components/routes/AdminRoutes';
 function App() {
+  const userRoutes = UserRoutes()
+  const adminRoutes = AdminRoutes()
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Toaster position="top-center"/>
+      <Header />
+       <div className="container">
+        <Routes>
+         {userRoutes}
+         {adminRoutes}
+        </Routes>
+     
+      </div>
+      <Footer />
     </div>
+    </Router>
   );
 }
 
