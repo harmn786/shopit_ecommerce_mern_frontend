@@ -2,7 +2,7 @@ import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const orderApi = createApi({
     // keepUnusedDataFor:60,
     reducerPath:'orderApi',
-    baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_URL }),
+    baseQuery: fetchBaseQuery({ baseUrl: "https://shopit-ecommerce-mern-backend-new.vercel.app/api/v1" }),
     tagTypes:["Order","AdminOrders"],
     endpoints:(builder)=>({
        
