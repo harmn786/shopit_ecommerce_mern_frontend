@@ -2,7 +2,7 @@ import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const orderApi = createApi({
     // keepUnusedDataFor:60,
     reducerPath:'orderApi',
-    baseQuery:fetchBaseQuery({baseUrl:"/api/v1"}),
+    baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_URL }),
     tagTypes:["Order","AdminOrders"],
     endpoints:(builder)=>({
        

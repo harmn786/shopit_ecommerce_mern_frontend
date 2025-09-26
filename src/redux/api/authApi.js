@@ -4,7 +4,7 @@ import { userApi } from './userApi';
 export const authApi = createApi({
     // keepUnusedDataFor:60,
     reducerPath: 'authApi',
-    baseQuery: fetchBaseQuery({ baseUrl: "/api/v1" }),
+    baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_URL }),
     endpoints: (builder) => ({
         register: builder.mutation({
             query(body) {
