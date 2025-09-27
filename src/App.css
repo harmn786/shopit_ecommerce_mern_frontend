@@ -563,3 +563,23 @@ footer {
   border-radius: 0.3rem;
   color: #fa9c23;
 }
+/* Customize navbar toggler button */
+.navbar-toggler {
+  border-color: #ffc220 !important; /* Border color */
+  box-shadow: none !important; /* Remove any shadow */
+  /* border: 1.5px solid #ffc220 !important;  */
+  border: none !important
+}
+
+/* Remove outline and glow on focus & active */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ffc220 !important;
+}
+
+/* Change the toggler icon color */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1) ' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
