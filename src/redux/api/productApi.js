@@ -2,7 +2,15 @@ import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const productApi = createApi({
     // keepUnusedDataFor:60,
     reducerPath:'productApi',
-    baseQuery: fetchBaseQuery({ baseUrl: "https://shopit-ecommerce-mern-backend-new.vercel.app/api/v1" }),
+    baseQuery: fetchBaseQuery({ baseUrl: "https://shopit-ecommerce-mern-backend-new.vercel.app/api/v1",
+         prepareHeaders: (headers) => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+      return headers;
+    },
+     }),
     tagTypes:["Product","AdminProducts","Reviews"],
     endpoints:(builder)=>({
         getProducts:builder.query({
